@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,49 +9,86 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            background: #fff8f0;
             color: #222;
         }
 
         header {
-            background: #d35400;
+            background: linear-gradient(135deg, #d35400, #ff8c00);
             color: white;
             text-align: center;
-            padding: 30px 15px;
+            padding: 55px 20px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 32px;
+            font-size: 40px;
+            margin-bottom: 12px;
         }
 
         header p {
-            font-size: 17px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: white;
+            color: #d35400;
+            padding: 13px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .menu {
-            padding: 25px 15px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
+            padding: 45px 20px;
         }
 
-        .menu h2 {
+        .menu-title {
             text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .menu-title h2 {
             color: #d35400;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .menu-title p {
+            color: #666;
+        }
+
+        .foods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
         }
 
         .food {
             background: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 15px;
+            border-radius: 18px;
+            padding: 25px 20px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .food:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
         }
 
         .food h3 {
@@ -58,28 +96,75 @@
             margin-bottom: 10px;
         }
 
+        .food p {
+            color: #666;
+            margin-bottom: 12px;
+        }
+
         .price {
+            color: #d35400 !important;
+            font-size: 20px;
             font-weight: bold;
-            font-size: 18px;
         }
 
         .order {
             display: inline-block;
             background: #25D366;
             color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 12px 22px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 8px;
+        }
+
+        .about {
+            background: #d35400;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .about h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contact h2 {
+            color: #d35400;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin: 8px;
         }
 
         footer {
             background: #222;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 22px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            header {
+                padding: 45px 15px;
+            }
         }
     </style>
 </head>
@@ -88,51 +173,75 @@
 
 <header>
     <h1>🍴 Aime Restaurant</h1>
-    <p>Delicious Food Every Day</p>
+    <p>Delicious food made with love</p>
+
+    <a href="#menu" class="hero-button">View Our Menu</a>
 </header>
 
-<section class="menu">
+<section class="menu" id="menu">
 
-    <h2>Our Menu</h2>
-
-    <div class="food">
-        <h3>🍕 Pizza</h3>
-        <p>Delicious fresh pizza</p>
-        <p class="price">5,000 FRW</p>
-
-        <a class="order"
-           href="https://wa.me/250792494461?text=Hello%2C%20I%20want%20to%20order%20Pizza%20-%205000%20FRW">
-           Order Pizza
-        </a>
+    <div class="menu-title">
+        <h2>Our Menu 🍽️</h2>
+        <p>Choose your favorite meal and order directly on WhatsApp.</p>
     </div>
 
-    <div class="food">
-        <h3>🍗 Chicken</h3>
-        <p>Fresh and delicious chicken</p>
-        <p class="price">4,000 FRW</p>
+    <div class="foods">
 
-        <a class="order"
-           href="https://wa.me/250792494461?text=Hello%2C%20I%20want%20to%20order%20Chicken%20-%204000%20FRW">
-           Order Chicken
-        </a>
+        <div class="food">
+            <div class="food-icon">🍕</div>
+            <h3>Pizza</h3>
+            <p>Fresh and delicious pizza.</p>
+            <p class="price">5,000 FRW</p>
+
+            <a class="order"
+               href="https://wa.me/250792494461?text=Hello%2C%20I%20want%20to%20order%20Pizza%20-%205000%20FRW">
+                Order Now
+            </a>
+        </div>
+
+        <div class="food">
+            <div class="food-icon">🍗</div>
+            <h3>Chicken</h3>
+            <p>Fresh and tasty chicken.</p>
+            <p class="price">4,000 FRW</p>
+
+            <a class="order"
+               href="https://wa.me/250792494461?text=Hello%2C%20I%20want%20to%20order%20Chicken%20-%204000%20FRW">
+                Order Now
+            </a>
+        </div>
+
+        <div class="food">
+            <div class="food-icon">🥤</div>
+            <h3>Fresh Juice</h3>
+            <p>Fresh natural juice.</p>
+            <p class="price">1,000 FRW</p>
+
+            <a class="order"
+               href="https://wa.me/250792494461?text=Hello%2C%20I%20want%20to%20order%20Juice%20-%201000%20FRW">
+                Order Now
+            </a>
+        </div>
+
     </div>
+</section>
 
-    <div class="food">
-        <h3>🥤 Juice</h3>
-        <p>Fresh natural juice</p>
-        <p class="price">1,000 FRW</p>
+<section class="about">
+    <h2>About Aime Restaurant</h2>
+    <p>
+        Welcome to Aime Restaurant. We serve delicious and fresh meals
+        for our customers. Order your favorite food easily through WhatsApp.
+    </p>
+</section>
 
-        <a class="order"
-           href="https://wa.me/250792494461?text=Hello%2C%20I%20want%20to%20order%20Juice%20-%201000%20FRW">
-           Order Juice
-        </a>
-    </div>
-
+<section class="contact">
+    <h2>Contact Us 📞</h2>
+    <p>📱 WhatsApp: 0792494461</p>
+    <p>🍴 Aime Restaurant</p>
 </section>
 
 <footer>
-    <p>📞 WhatsApp: 0792494461</p>
-    <p>© 2026 Aime Restaurant</p>
+    <p>© 2026 Aime Restaurant. All rights reserved.</p>
 </footer>
 
 </body>
